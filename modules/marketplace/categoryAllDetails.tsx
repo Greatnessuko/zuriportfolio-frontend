@@ -127,10 +127,10 @@ const CategoryAllDetails: React.FC<CategoryAllDetailsProps> = ({ category }) => 
       <div className="w-full h-screen flex flex-col content-center gap-[80px] pb-[90px]">
         <section className="w-full h-auto flex flex-col content-center gap-[32px]">
           <div className="w-full flex flex-row content-center items-center justify-between">
-            <h1 className=" sm:text-[16px] md:text-[24px] lg:text-[28px] font-semibold leading-[36px] text-[#052011]">
+            <h1 className=" sm:text-[16px] md:text-[24px] lg:text-[28px] font-manropeB leading-[36px] text-[#131418]">
               Graphics Design Templates
             </h1>
-            <p className="max-sm:text-[10px] md:text-[12px] lg:text-[14px] font-semibold leading-[20px] text-[#00894c]">
+            <p className="max-sm:text-[10px] md:text-[12px] lg:text-[14px] font-manropeB leading-[20px] text-[#009254]">
               View all
             </p>
           </div>
@@ -139,7 +139,7 @@ const CategoryAllDetails: React.FC<CategoryAllDetailsProps> = ({ category }) => 
             {graphicDesign.map((AllCategoryDetails, index) => (
               <div
                 key={index}
-                className="flex flex-col content-center max-sm:p-[12px] md:p-[14px] lg:p-[16px] border-[1px] rounded-[8px] border-[#d5dbdd]"
+                className="flex flex-col content-center max-sm:p-[12px] md:p-[14px] lg:p-[16px] border-[1px] rounded-[8px] border-[#a0a6c9]"
               >
                 <div className="w-full h-auto rounded-[8px]">
                   <Image
@@ -150,13 +150,13 @@ const CategoryAllDetails: React.FC<CategoryAllDetailsProps> = ({ category }) => 
                     height={209}
                   />
                 </div>
-                <h2 className=" mt-[8px] max-sm:text-[10.2px] md:text-[13.1px] lg:text-[13.9px] leading-[20px] tracking-[0.1%] font-normal text-[#052011] capitalize max-w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
+                <h2 className=" mt-[8px] font-manropeL max-sm:text-[10.2px] md:text-[13.1px] lg:text-[13.9px] leading-[20px] tracking-[0.1%] text-[#131418] capitalize max-w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
                   {AllCategoryDetails.name}
                 </h2>
-                <p className="mt-[2px] font-bold max-sm:text-[16px] lg:text-[18px] leading-[24.59px] text-[#052011]">
+                <p className="mt-[2px] font-manropeEB max-sm:text-[16px] lg:text-[18px] leading-[24.59px] text-[#131418]">
                   {AllCategoryDetails.price}
                 </p>
-                <p className=" mt-[8px] font-normal max-sm:text-[12px] md:text-[13px] lg:text-[14px] leading-[20px] tracking-[0.25%] text-[#4f4e4e]">
+                <p className=" mt-[8px] font-manropeL max-sm:text-[12px] md:text-[13px] lg:text-[14px] leading-[20px] tracking-[0.25%] text-[#a0a6c9]">
                   By: <span className=" underline">{AllCategoryDetails.author}</span>
                 </p>
                 <Image className=" mt-[20px]" src={'/assets/Rating.png'} alt="rating" width={100} height={20} />
@@ -166,10 +166,10 @@ const CategoryAllDetails: React.FC<CategoryAllDetailsProps> = ({ category }) => 
         </section>
         <section className="w-full h-auto flex flex-col content-center gap-[32px]">
           <div className="w-full flex flex-row content-center items-center justify-between">
-            <h1 className=" sm:text-[16px] md:text-[24px] lg:text-[28px] font-semibold leading-[36px] text-[#052011]">
+            <h1 className=" sm:text-[16px] md:text-[24px] lg:text-[28px] font-manropeB leading-[36px] text-[#131418]">
               Illustration
             </h1>
-            <p className="max-sm:text-[10px] md:text-[12px] lg:text-[14px] font-semibold leading-[20px] text-[#00894c]">
+            <p className="max-sm:text-[10px] md:text-[12px] lg:text-[14px] font-manropeB leading-[20px] text-[#009254]">
               View all
             </p>
           </div>
@@ -178,7 +178,7 @@ const CategoryAllDetails: React.FC<CategoryAllDetailsProps> = ({ category }) => 
             {illustration.map((AllCategoryDetails, index) => (
               <div
                 key={index}
-                className="flex flex-col content-center max-sm:p-[12px] md:p-[14px] lg:p-[16px] border-[1px] rounded-[8px] border-[#d5dbdd]"
+                className="flex flex-col content-center max-sm:p-[12px] md:p-[14px] lg:p-[16px] border-[1px] rounded-[8px] border-[#a0a6c9]"
               >
                 <div className="w-full h-auto rounded-[8px]">
                   <Image
@@ -189,13 +189,13 @@ const CategoryAllDetails: React.FC<CategoryAllDetailsProps> = ({ category }) => 
                     height={209}
                   />
                 </div>
-                <h2 className=" mt-[8px] max-sm:text-[10.2px] md:text-[13.1px] lg:text-[13.9px] leading-[20px] tracking-[0.1%] font-normal text-[#052011] capitalize max-w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
+                <h2 className=" mt-[8px] max-sm:text-[10.2px] md:text-[13.1px] lg:text-[13.9px] leading-[20px] tracking-[0.1%] font-manropeL text-[#131418] capitalize max-w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
                   {AllCategoryDetails.name}
                 </h2>
-                <p className="mt-[2px] font-bold max-sm:text-[16px] lg:text-[18px] leading-[24.59px] text-[#052011]">
+                <p className="mt-[2px] font-manropeEB max-sm:text-[16px] lg:text-[18px] leading-[24.59px] text-[#131418]">
                   {AllCategoryDetails.price}
                 </p>
-                <p className=" mt-[8px] font-normal max-sm:text-[12px] md:text-[13px] lg:text-[14px] leading-[20px] tracking-[0.25%] text-[#4f4e4e]">
+                <p className=" mt-[8px] font-manropeL max-sm:text-[12px] md:text-[13px] lg:text-[14px] leading-[20px] tracking-[0.25%] text-[#a0a6c9]">
                   By: <span className=" underline">{AllCategoryDetails.author}</span>
                 </p>
                 <Image className=" mt-[20px]" src={'/assets/Rating.png'} alt="rating" width={100} height={20} />
@@ -205,10 +205,10 @@ const CategoryAllDetails: React.FC<CategoryAllDetailsProps> = ({ category }) => 
         </section>
         <section className="w-full h-auto flex flex-col content-center gap-[32px]">
           <div className="w-full flex flex-row content-center items-center justify-between">
-            <h1 className=" sm:text-[16px] md:text-[24px] lg:text-[28px] font-semibold leading-[36px] text-[#052011]">
+            <h1 className=" sm:text-[16px] md:text-[24px] lg:text-[28px] font-manropeB leading-[36px] text-[#131418]">
               Logo Design
             </h1>
-            <p className="max-sm:text-[10px] md:text-[12px] lg:text-[14px] font-semibold leading-[20px] text-[#00894c]">
+            <p className="max-sm:text-[10px] md:text-[12px] lg:text-[14px] font-manropeB leading-[20px] text-[#009254]">
               View all
             </p>
           </div>
@@ -217,7 +217,7 @@ const CategoryAllDetails: React.FC<CategoryAllDetailsProps> = ({ category }) => 
             {logoDesign.map((AllCategoryDetails, index) => (
               <div
                 key={index}
-                className="flex flex-col content-center max-sm:p-[12px] md:p-[14px] lg:p-[16px] border-[1px] rounded-[8px] border-[#d5dbdd]"
+                className="flex flex-col content-center max-sm:p-[12px] md:p-[14px] lg:p-[16px] border-[1px] rounded-[8px] border-[#a0a6c9]"
               >
                 <div className="w-full h-auto rounded-[8px]">
                   <Image
@@ -228,13 +228,13 @@ const CategoryAllDetails: React.FC<CategoryAllDetailsProps> = ({ category }) => 
                     height={209}
                   />
                 </div>
-                <h2 className=" mt-[8px] max-sm:text-[10.2px] md:text-[13.1px] lg:text-[13.9px] leading-[20px] tracking-[0.1%] font-normal text-[#052011] capitalize max-w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
+                <h2 className=" mt-[8px] max-sm:text-[10.2px] md:text-[13.1px] lg:text-[13.9px] leading-[20px] tracking-[0.1%] font-manropeL text-[#131418] capitalize max-w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
                   {AllCategoryDetails.name}
                 </h2>
-                <p className="mt-[2px] font-bold max-sm:text-[16px] lg:text-[18px] leading-[24.59px] text-[#052011]">
+                <p className="mt-[2px] font-manropeEB max-sm:text-[16px] lg:text-[18px] leading-[24.59px] text-[#131418]">
                   {AllCategoryDetails.price}
                 </p>
-                <p className=" mt-[8px] font-normal max-sm:text-[12px] md:text-[13px] lg:text-[14px] leading-[20px] tracking-[0.25%] text-[#4f4e4e]">
+                <p className=" mt-[8px] font-manropeL max-sm:text-[12px] md:text-[13px] lg:text-[14px] leading-[20px] tracking-[0.25%] text-[#a0a6c9]">
                   By: <span className=" underline">{AllCategoryDetails.author}</span>
                 </p>
                 <Image className=" mt-[20px]" src={'/assets/Rating.png'} alt="rating" width={100} height={20} />
@@ -244,10 +244,10 @@ const CategoryAllDetails: React.FC<CategoryAllDetailsProps> = ({ category }) => 
         </section>
         <section className="w-full h-auto flex flex-col content-center gap-[32px]">
           <div className="w-full flex flex-row content-center items-center justify-between">
-            <h1 className=" sm:text-[16px] md:text-[24px] lg:text-[28px] font-semibold leading-[36px] text-[#052011]">
+            <h1 className=" sm:text-[16px] md:text-[24px] lg:text-[28px] font-manropeB leading-[36px] text-[#131418]">
               Branding Assets
             </h1>
-            <p className="max-sm:text-[10px] md:text-[12px] lg:text-[14px] font-semibold leading-[20px] text-[#00894c]">
+            <p className="max-sm:text-[10px] md:text-[12px] lg:text-[14px] font-manropeB leading-[20px] text-[#009254]">
               View all
             </p>
           </div>
@@ -256,7 +256,7 @@ const CategoryAllDetails: React.FC<CategoryAllDetailsProps> = ({ category }) => 
             {brandingAssets.map((AllCategoryDetails, index) => (
               <div
                 key={index}
-                className="flex flex-col content-center max-sm:p-[12px] md:p-[14px] lg:p-[16px] border-[1px] rounded-[8px] border-[#d5dbdd]"
+                className="flex flex-col content-center max-sm:p-[12px] md:p-[14px] lg:p-[16px] border-[1px] rounded-[8px] border-[#a0a6c9]"
               >
                 <div className="w-full h-auto rounded-[8px]">
                   <Image
@@ -267,13 +267,13 @@ const CategoryAllDetails: React.FC<CategoryAllDetailsProps> = ({ category }) => 
                     height={209}
                   />
                 </div>
-                <h2 className=" mt-[8px] max-sm:text-[10.2px] md:text-[13.1px] lg:text-[13.9px] leading-[20px] tracking-[0.1%] font-normal text-[#052011] capitalize max-w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
+                <h2 className=" mt-[8px] max-sm:text-[10.2px] md:text-[13.1px] lg:text-[13.9px] leading-[20px] tracking-[0.1%] font-manropeL text-[#131418] capitalize max-w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
                   {AllCategoryDetails.name}
                 </h2>
-                <p className="mt-[2px] font-bold max-sm:text-[16px] lg:text-[18px] leading-[24.59px] text-[#052011]">
+                <p className="mt-[2px] font-manropeEB max-sm:text-[16px] lg:text-[18px] leading-[24.59px] text-[#131418]">
                   {AllCategoryDetails.price}
                 </p>
-                <p className=" mt-[8px] font-normal max-sm:text-[12px] md:text-[13px] lg:text-[14px] leading-[20px] tracking-[0.25%] text-[#4f4e4e]">
+                <p className=" mt-[8px] font-manropeL max-sm:text-[12px] md:text-[13px] lg:text-[14px] leading-[20px] tracking-[0.25%] text-[#a0a6c9]">
                   By: <span className=" underline">{AllCategoryDetails.author}</span>
                 </p>
                 <Image className=" mt-[20px]" src={'/assets/Rating.png'} alt="rating" width={100} height={20} />
@@ -283,15 +283,15 @@ const CategoryAllDetails: React.FC<CategoryAllDetailsProps> = ({ category }) => 
         </section>
         <section className="w-full h-auto flex flex-col content-center gap-[32px]">
           <div className="w-full flex flex-row content-center items-center justify-between">
-            <h1 className="text-[28px] font-semibold leading-[36px] text-[#052011]">Ui/Ux Design Elements</h1>
-            <p className="text-[14px] font-semibold leading-[20px] text-[#00894c]">View all</p>
+            <h1 className="text-[28px] font-manropeB leading-[36px] text-[#131418]">Ui/Ux Design Elements</h1>
+            <p className="text-[14px] font-manropeB leading-[20px] text-[#009254]">View all</p>
           </div>
           <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 max-sm:gap-[8px] lg:gap-[25px] md:gap-[24px]">
             {/* <div className=" w-full p-[16px]"></div> */}
             {designElements.map((AllCategoryDetails, index) => (
               <div
                 key={index}
-                className="flex flex-col content-center max-sm:p-[12px] md:p-[14px] lg:p-[16px] border-[1px] rounded-[8px] border-[#d5dbdd]"
+                className="flex flex-col content-center max-sm:p-[12px] md:p-[14px] lg:p-[16px] border-[1px] rounded-[8px] border-[#a0a6c9]"
               >
                 <div className="w-full h-auto rounded-[8px]">
                   <Image
@@ -302,13 +302,13 @@ const CategoryAllDetails: React.FC<CategoryAllDetailsProps> = ({ category }) => 
                     height={209}
                   />
                 </div>
-                <h2 className=" mt-[8px] max-sm:text-[10.2px] md:text-[13.1px] lg:text-[13.9px] leading-[20px] tracking-[0.1%] font-normal text-[#052011] capitalize max-w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
+                <h2 className=" mt-[8px] max-sm:text-[10.2px] md:text-[13.1px] lg:text-[13.9px] leading-[20px] tracking-[0.1%] font-manropeL text-[#131418] capitalize max-w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
                   {AllCategoryDetails.name}
                 </h2>
-                <p className="mt-[2px] font-bold max-sm:text-[16px] lg:text-[18px] leading-[24.59px] text-[#052011]">
+                <p className="mt-[2px] font-manropeEB max-sm:text-[16px] lg:text-[18px] leading-[24.59px] text-[#131418]">
                   {AllCategoryDetails.price}
                 </p>
-                <p className=" mt-[8px] font-normal max-sm:text-[12px] md:text-[13px] lg:text-[14px] leading-[20px] tracking-[0.25%] text-[#4f4e4e]">
+                <p className=" mt-[8px] font-manropeL max-sm:text-[12px] md:text-[13px] lg:text-[14px] leading-[20px] tracking-[0.25%] text-[#a0a6c9]">
                   By: <span className=" underline">{AllCategoryDetails.author}</span>
                 </p>
                 <Image className=" mt-[20px]" src={'/assets/Rating.png'} alt="rating" width={100} height={20} />

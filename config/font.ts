@@ -1,4 +1,4 @@
-import { Poppins, DM_Sans, Manrope } from 'next/font/google';
+import { Manrope, Poppins } from 'next/font/google';
 
 export const ppReg = Poppins({
   subsets: ['latin'],
