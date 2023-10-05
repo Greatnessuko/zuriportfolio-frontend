@@ -11,7 +11,7 @@ const Badges: React.FC<BadgesProps> = ({ badgeImage, badgeType, scorePercentage 
         <div className="flex items-center justify-center">
           <img src="/assets/images/badges/emoji-happy.png" alt=" smiley face emoji" />
         </div>
-        <div></div>
+        <div>second</div>
       </div>
     </section>
   );
