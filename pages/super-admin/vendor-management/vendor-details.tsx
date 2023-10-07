@@ -10,15 +10,23 @@ import badge from '/public/assets/vendor/Badge.png';
 import Button from '@ui/Button';
 import { ArrowRight } from 'iconsax-react';
 import SuperAdminNavbar from '../../../modules/super-admin/components/navigations/SuperAdminNavbar';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 function VendorDetails() {
+  const router = useRouter();
+  function allProducts() {
+    router.push('/super-admin/vendor-management/');
+  }
   return (
     <>
       <SuperAdminNavbar />
-      <div className="top flex items-center mr-5 border-b border-gray-50 ml-10 mt-5">
-        <Image src={right} alt="back" className="mr-2 pb-3"></Image>
-        <p className="pb-3">Vendor Profile Details</p>
-      </div>
+      <Link href="/super-admin/vendor-management">
+        <div className="top flex items-center mr-5 border-b border-gray-50 ml-10 mt-5">
+          <Image src={right} alt="back" className="mr-2 pb-3"></Image>
+          <p className="pb-3">Vendor Profile Details</p>
+        </div>
+      </Link>
 
       <section className="vendor-dash mr-5 ml-5 lg:flex items-center lg:mr-0 lg:ml-0 font-manropeL">
         <div className="sales flex flex-col items-center justify-center lg:w-1/2 lg:ml-10">
@@ -162,6 +170,7 @@ function VendorDetails() {
           isLoading={false}
           spinnerColor="#000"
           className="ml-auto mt-5 mr-8 rounded-none"
+          onClick={allProducts}
         >
           See all
         </Button>
