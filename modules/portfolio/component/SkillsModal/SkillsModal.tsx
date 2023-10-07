@@ -1,7 +1,7 @@
 import Button from '@ui/Button';
 import { Input } from '@ui/Input';
 import Modal from '@ui/Modal';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 const SkillModal = () => {
   const [skillModalOpen, setIsSkillModalOpen] = useState(false);
@@ -40,18 +40,41 @@ const SkillModal = () => {
     setArrayTwo(arrayTwo.filter((el) => el !== item));
     setArrayOne([...arrayOne, item]);
   };
+  
+    const handleKeyPress = (e) => {
+      
+      if (e.key === 'Enter') {
+        
+        const trimmedValue = inputValue.trim();
 
-  const handlekKeyPress = (event) => {
-    if (event.key === 'Enter') {
-      const trimmedValue = inputValue.trim;
-      if (trimmedValue !== '') {
-        setArrayTwo((prevArray) => [...prevArray, trimmedValue]);
+        if (trimmedValue !== '') {
+          setArrayTwo((prevArray) => [...prevArray, trimmedValue]);
+          setInputValue(''); // Clear the input field after pushing the value
+        }
       }
-    }
-  };
+    };
+    console.log(arrayTwo)
+
+  //  const handleKeyPress = (event) => {
+  //   console.log('the vALUE IS', inputValue);
+  //   if (event.key === "Enter") {
+  //     event.preventDefault();
+      
+  //     setArrayTwo([...arrayTwo, inputValue]);
+  //   }
+  //  }
+
+  // const handlekKeyPress = (event) => {
+  //   if (event.key === 'Enter') {
+  //     const trimmedValue = inputValue.trim;
+  //     if (trimmedValue !== '') {
+  //       setArrayTwo((prevArray) => [...prevArray, trimmedValue]);
+  //     }
+  //   }
+  // };
 
   return (
-    <section className="w-full flex items-center justify-center">
+    <section className="w-full flex items-center justify-center ">
       {skillModalOpen && (
         <Modal
           closeOnOverlayClick
@@ -59,8 +82,9 @@ const SkillModal = () => {
           closeModal={onClose}
           isCloseIconPresent={true}
           size="lg"
+          // title="Skill"
         >
-          <div className=" w-full max-sm:w-full px-4 py-6">
+          <div className=" w-full max-sm:w-full px-4 py-6 fontFamily-manropeEL">
             <div className="flex justify-between items-center border-b-4 border-brand-green-primary pb-4">
               <h1 className="font-bold text-2xl ">Skill</h1>
             </div>
@@ -70,13 +94,41 @@ const SkillModal = () => {
                   {arrayTwo.map((item) => (
                     <li key={item}>
                       <Button
-                        className=" group/skillsbtn text-brand-green-800 h-10 bg-brand-green-shade95  hover:text-white-100 hover: text-sm font-semibold leading-5 rounded-lg px-2 py-4 flex items-center gap-4"
+                        className=" group/skillsbtn text-brand-green-shade20 h-10 bg-brand-green-shade95  hover:text-white-100 hover: text-sm font-semibold leading-5 rounded-lg px-2 py-4 flex items-center gap-4"
                         onClick={() => handleMoveToOne(item)}
                         type="button"
                       >
                         {item}
-                        <span className="text-base w-6 h-6 border-2 rounded-full m-auto ml-4 flex items-center justify-center group-hover/skillsbtn:border-white-100">
-                          X
+                        <span className="text-base rounded-full m-auto ml-4 flex items-center justify-center  group-hover/skillsbtn:border-white-100">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+                              stroke="#00894C"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M9.16992 14.8319L14.8299 9.17188"
+                              stroke="#00894C"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M14.8299 14.8319L9.16992 9.17188"
+                              stroke="#00894C"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
                         </span>
                       </Button>
                     </li>
@@ -86,13 +138,15 @@ const SkillModal = () => {
             </div>
 
             <div className="my-12">
-              <Input
-                type="text"
-                placeHolder='Enter your skill and press "ENTER'
-                className="w-full rounded-lg p-4 mb-6 border-2 border-[#C4C7C6]"
-                onKeyDown={handlekKeyPress}
-                onChange={(e) => setInputValue(e.target.value)}
-              />
+              <button onKeyDown={handleKeyPress} className="w-full">
+                <Input
+                  type="text"
+                  placeHolder='Enter your skill and press "ENTER'
+                  className="w-full rounded-lg p-4 mb-6 border-2 border-[#C4C7C6]"
+                  onKeyDown={handleKeyPress}
+                  onChange={(e) => setInputValue(e.target.value)}
+                />
+              </button>
             </div>
 
             <div className="w-full">
@@ -107,7 +161,36 @@ const SkillModal = () => {
                         type="button"
                       >
                         {item}
-                        <span>+</span>
+                        <span>
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g id="vuesax/linear/add">
+                              <g id="add">
+                                <path
+                                  id="Vector"
+                                  d="M6 12H18"
+                                  stroke="#003A1B"
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                                <path
+                                  id="Vector_2"
+                                  d="M12 18V6"
+                                  stroke="#003A1B"
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                        </span>
                       </Button>
                     </li>
                   ))}
