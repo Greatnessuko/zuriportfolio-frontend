@@ -1,9 +1,11 @@
 import Button from '@ui/Button';
+import { Input } from '@ui/Input';
 import Modal from '@ui/Modal';
 import { useState } from 'react';
 
 const SkillModal = () => {
   const [skillModalOpen, setIsSkillModalOpen] = useState(false);
+  const [inputValue, setInputValue] = useState('');
 
   const isSkillModalOpen = () => {
     setIsSkillModalOpen(true);
@@ -39,14 +41,28 @@ const SkillModal = () => {
     setArrayOne([...arrayOne, item]);
   };
 
+  const handlekKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      const trimmedValue = inputValue.trim;
+      if (trimmedValue !== '') {
+        setArrayTwo((prevArray) => [...prevArray, trimmedValue]);
+      }
+    }
+  };
+
   return (
     <section className="w-full flex items-center justify-center">
       {skillModalOpen && (
-        <Modal closeOnOverlayClick isOpen={skillModalOpen} closeModal={onClose} isCloseIconPresent={false} size="lg">
+        <Modal
+          closeOnOverlayClick
+          isOpen={skillModalOpen}
+          closeModal={onClose}
+          isCloseIconPresent={true}
+          size="lg"
+        >
           <div className=" w-full max-sm:w-full px-4 py-6">
-            <div className="flex justify-between items-center border-b-4 border-brand-green-primary py-4">
+            <div className="flex justify-between items-center border-b-4 border-brand-green-primary pb-4">
               <h1 className="font-bold text-2xl ">Skill</h1>
-              <span>x</span>
             </div>
             <div className="w-full">
               {arrayTwo.length > 0 && (
@@ -54,7 +70,7 @@ const SkillModal = () => {
                   {arrayTwo.map((item) => (
                     <li key={item}>
                       <Button
-                        className=" group/skillsbtn  h-10 bg-brand-green-shade95 text-brand-green-shade20 hover:text-white-100 hover: text-sm font-semibold leading-5 rounded-lg px-2 py-4 flex items-center gap-4"
+                        className=" group/skillsbtn text-brand-green-800 h-10 bg-brand-green-shade95  hover:text-white-100 hover: text-sm font-semibold leading-5 rounded-lg px-2 py-4 flex items-center gap-4"
                         onClick={() => handleMoveToOne(item)}
                         type="button"
                       >
@@ -70,10 +86,12 @@ const SkillModal = () => {
             </div>
 
             <div className="my-12">
-              <input
+              <Input
                 type="text"
-                placeholder='Enter your skill and press "ENTER'
+                placeHolder='Enter your skill and press "ENTER'
                 className="w-full rounded-lg p-4 mb-6 border-2 border-[#C4C7C6]"
+                onKeyDown={handlekKeyPress}
+                onChange={(e) => setInputValue(e.target.value)}
               />
             </div>
 
@@ -84,7 +102,7 @@ const SkillModal = () => {
                   {arrayOne.map((item) => (
                     <li key={item}>
                       <Button
-                        className="text-[#737876] bg-white border-2 border-[#C4C7C6]"
+                        className="text-[#737876] bg-white border-2 border-brand-disabled2 hover:text-white-100"
                         onClick={() => handleMoveToTwo(item)}
                         type="button"
                       >
