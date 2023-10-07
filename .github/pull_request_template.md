@@ -4,12 +4,11 @@ you can check this one that was used for the previous cohort
 
 > This could be an existing issue or a linear ticket
 >
-> - Github Issue Example: My PR Closes #{ISSUE}
-> - Linear Ticket Example: Fixes ID-#{ISSUE}
+> - Linear Ticket Example: FEAT ID-#{SUP-12}
 
 # Changes proposed
 
-> Talk about the things you did eg. files changes, dependencies installed e.t.c
+> I created the vendor details page for a specific vendor for the vendor management component
 
 # Check List (Check all the applicable boxes)
 

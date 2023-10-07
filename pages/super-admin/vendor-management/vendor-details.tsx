@@ -1,3 +1,4 @@
+import SuperAdminNavbar from '../../../modules/super-admin/components/navigations/SuperAdminNavbar';
 import Image from 'next/image';
 import star from '/public/assets/vendor/grade.png';
 import active from '/public/assets/vendor/active.png';
@@ -8,13 +9,34 @@ import product_two from '/public/assets/vendor/vendor-product-2.png';
 import right from '/public/assets/vendor/arrow-right.svg';
 import badge from '/public/assets/vendor/Badge.png';
 import Button from '@ui/Button';
+import Modal from '@ui/Modal';
 import { ArrowRight } from 'iconsax-react';
-import SuperAdminNavbar from '../../../modules/super-admin/components/navigations/SuperAdminNavbar';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import React from 'react';
 
 function VendorDetails() {
+  //States for opening and closing the modaals
+  const [isModal, setIsModal] = React.useState(false);
+  const [isDeleteModal, setDeleteModal] = React.useState(false);
+
+  function openModal() {
+    setIsModal(true);
+  }
+  function closeModal() {
+    setIsModal(false);
+  }
+  function deleteModal() {
+    setIsModal(false);
+    setDeleteModal(true);
+  }
+
+  function closeDeleteModal() {
+    setDeleteModal(false);
+  }
+
   const router = useRouter();
+  //linking back to the vendor managament main page
   function allProducts() {
     router.push('/super-admin/vendor-management/');
   }
@@ -22,12 +44,13 @@ function VendorDetails() {
     <>
       <SuperAdminNavbar />
       <Link href="/super-admin/vendor-management">
-        <div className="top flex items-center mr-5 border-b border-gray-50 ml-10 mt-5">
+        <div className="top flex items-center mr-5 border-b border-gray-50 ml-10 mt-5 mb-5">
           <Image src={right} alt="back" className="mr-2 pb-3"></Image>
           <p className="pb-3">Vendor Profile Details</p>
         </div>
       </Link>
 
+      {/* Vendor Products */}
       <section className="vendor-dash mr-5 ml-5 lg:flex items-center lg:mr-0 lg:ml-0 font-manropeL">
         <div className="sales flex flex-col items-center justify-center lg:w-1/2 lg:ml-10">
           <div className="revenue border border-gray-300 p-2 mb-5 w-full lg:w-full">
@@ -50,7 +73,9 @@ function VendorDetails() {
           </div>
         </div>
 
-        <div className="profile mt-10  w-full lg:w-1/2 lg:ml-12 lg:mr-5 lg:mt-0 ">
+        {/* Vendor Profile */}
+
+        <div className="profile mt-10  w-full lg:w-1/2 lg:ml-12 lg:mr-5 lg:mt-0">
           <div className="header flex items-center ml-5 lg:ml-0">
             <Image src={vendor} alt="Vendor image" className="mr-3"></Image>
             <div className="name">
@@ -79,12 +104,14 @@ function VendorDetails() {
               <Image src={active} alt="active" className="mr-5 lg:mr-0"></Image>
             </div>
 
+            {/* Toggle the modal for deleting or banning vendors */}
             <div className="buttons w-full flex items-center justify-between mt-6">
               <Button
                 size={'md'}
                 isLoading={false}
                 spinnerColor="#000"
                 className="text-red-200 bg-transparent border border-red-200 p-3 w-1/3 rounded-sm ml-5 lg:ml-0 z-0"
+                onClick={openModal}
               >
                 Delete
               </Button>
@@ -94,6 +121,7 @@ function VendorDetails() {
                 isLoading={false}
                 spinnerColor="#000"
                 className="text-black bg-transparent border border-black p-3 w-1/3 rounded-md mr-5 lg:mr-0 z-0"
+                onClick={openModal}
               >
                 Ban
               </Button>
@@ -101,6 +129,8 @@ function VendorDetails() {
           </div>
         </div>
       </section>
+
+      {/* Vendor Products list */}
 
       <section className=" mt-10 font-manropeL pb-5">
         <h1 className="ml-10 text-xl font-bold mt-6">Products by Gustavo Silas</h1>
@@ -163,6 +193,7 @@ function VendorDetails() {
           </div>
         </div>
 
+        {/* Link to product details for particular vendor page */}
         <Button
           rightIcon={<ArrowRight color="#06C270" />}
           intent={'secondary'}
@@ -175,6 +206,87 @@ function VendorDetails() {
           See all
         </Button>
       </section>
+
+      {/* Modals for deleting vendor */}
+      <Modal
+        isOpen={isModal}
+        closeOnOverlayClick={false}
+        size="md"
+        isCloseIconPresent={false}
+        closeModal={function (): void {
+          throw new Error('Function not implemented.');
+        }}
+      >
+        <h1 className="font-bold text-xl mb-5">Delete Vendor</h1>
+        <p>
+          <span className="font-bold">Gustavo Silas</span> will be deleted as a vendor from Zuri Marketplace and all
+          their products as well. They will get a notification email.
+        </p>
+        <p className="mt-5 mb-5">Reasons for deleting</p>
+        <ul className="p-3">
+          <li className="m-3 p-3">Policy Violation</li>
+          <li className="m-3 p-3">Offensive words</li>
+          <li className="m-3 p-3">Just feel like it</li>
+          <li className="m-3 p-3">Other</li>
+        </ul>
+        <div className="buttons flex items-center mt-6  w-1/2 ml-auto justify-between">
+          <Button
+            intent={'primary'}
+            size={'md'}
+            isLoading={false}
+            spinnerColor="#000"
+            className="text-black bg-transparent border border-green-100 p-3 w-1/2 rounded-md mr-5 lg:mr-0 z-0"
+            onClick={closeModal}
+          >
+            Cancel
+          </Button>
+
+          <Button
+            intent={'primary'}
+            size={'md'}
+            isLoading={false}
+            spinnerColor="#000"
+            className="p-3 w-1/2 rounded-sm ml-5 lg:ml-0 ml-auto rounded-md"
+            onClick={deleteModal}
+          >
+            Delete
+          </Button>
+        </div>
+      </Modal>
+
+      <Modal
+        closeOnOverlayClick={false}
+        isOpen={isDeleteModal}
+        isCloseIconPresent={false}
+        closeModal={function (): void {
+          throw new Error('Function not implemented.');
+        }}
+      >
+        <h1 className="text-center text-black font-bold">Are you sure you want to delete this vendor?</h1>
+        <p className="text-center">Vendor will be permanently deleted from list.</p>
+        <div className="buttons flex flex-col items-center mt-6 w-full justify-between p-5">
+          <Button
+            intent={'error'}
+            size={'md'}
+            isLoading={false}
+            spinnerColor="#000"
+            className=" p-3 w-full rounded-md lg:mr-0 z-0  mb-5"
+            onClick={closeDeleteModal}
+          >
+            Delete Permanently
+          </Button>
+          <Button
+            intent={'primary'}
+            size={'md'}
+            isLoading={false}
+            spinnerColor="#000"
+            onClick={closeDeleteModal}
+            className="p-3 mb-5 w-full text-green-500 rounded-sm lg:ml-0 ml-auto rounded-md bg-transparent border border-green-500"
+          >
+            Cancel
+          </Button>
+        </div>
+      </Modal>
     </>
   );
 }
