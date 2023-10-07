@@ -22,13 +22,12 @@ function MainLayout({
 
   return (
     <div className={twMerge('w-full relative h-screen overflow-y-auto', className)}>
-      {showTopbar && <TopBar />}
+      {showTopbar && <TopBar activePage={activePage} showDashBorad={showDashboardSidebar} />}
 
-      <div className="flex">
-        {showDashboardSidebar && <SideBar activePage={activePage} />}
-        {children}
-      </div>
-      {showFooter && <TopBar />}
+      {/* {showDashboardSidebar && <SideBar activePage={activePage} />} */}
+      {children}
+
+      {/* {showFooter && <Footer />} */}
     </div>
   );
 }
